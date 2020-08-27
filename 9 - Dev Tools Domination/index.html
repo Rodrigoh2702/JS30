@@ -18,28 +18,62 @@
     }
 
     // Regular
+    console.log('This is a regular log');
 
     // Interpolated
+    console.log('This is an %s log', 'interpolated');
 
     // Styled
+    console.log('%c This is a styled log', 'font-size:50px; background:green; text-shadow:10px 10px 0 black');
 
     // warning!
+    console.warn('This is a warning');
 
     // Error :|
+    console.error('This is an error');
 
     // Info
+    console.info('This is some info');
 
     // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('something'), 'This is an assert');
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.dir(p); //show all properties
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('Rod');
+    console.count('Rod');
+    console.count('Beth');
+    console.count('Rod');
+    console.count('Beth');
+    console.count('Rod');
+    console.count('Beth');
+    console.count('Rod');
+    console.count('Beth');
+    console.count('Beth');
+    console.count('Rod');
+    console.count('Beth');
+    console.count('Rod');
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos').then(data => data.json()).then(data => {
+      console.timeEnd('fetching data');
+      console.log(data)
+    })
 
   </script>
 </body>
